@@ -1,22 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <h1>大家好 kkb欢迎你</h1>
+  <h2>
+    <span>count is {{count}}</span>
+    <button @click="count++">戳我</button>
+  </h2>
 </template>
 
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+<script>
+import { ref, computed } from 'vue';
+export default {
+  setup() {
+    const count = ref(0);
+    function add() {
+      count.value++;
+    }
+    const double = computed(() => count.value * 2);
+    return { count, add, double };
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

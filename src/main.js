@@ -1,5 +1,4 @@
-import { log } from './util.js'
+import { createApp } from 'vue'
+import App from './App.vue'
 
-log('xx')
-
-
+createApp(App).mount('#app')
