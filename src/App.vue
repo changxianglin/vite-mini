@@ -1,4 +1,5 @@
 <template>
+  <img alt="Vue logo" src="./assets/logo.png" />
   <h1>大家好 欢迎使用 vite-mini...</h1>
   <h2>
     <span>count is {{count}}</span>

@@ -81,7 +81,8 @@ app.use(async ctx => {
   }
 
   if (url.endsWith('.css')) {
-    const p = path.resolve(__dirname,url.slice(1))
+    const p = path.resolve(__dirname, url.slice(1))
+    console.log('css路径', p)
     const file = fs.readFileSync(p, 'utf-8')
     // win 换行 \r\n mac 换行 \n
     const content = `
@@ -94,6 +95,15 @@ app.use(async ctx => {
     `
     ctx.type = 'application/javascript'
     ctx.body = content
+  }
+
+  if (url.endsWith('.png')) {
+    console.log(process.env)
+    console.log('图盘路上', url)
+    const p = path.resolve(__dirname, url.slice(1))
+    const file = fs.readFileSync(p, 'utf-8')
+    ctx.type = 'image/png'
+    ctx.body = file
   }
 })
 
