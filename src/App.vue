@@ -1,5 +1,5 @@
 <template>
-  <h1>大家好 kkb欢迎你</h1>
+  <h1>大家好 欢迎使用 vite-mini...</h1>
   <h2>
     <span>count is {{count}}</span>
     <button @click="count++">戳我</button>
