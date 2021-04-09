@@ -98,10 +98,8 @@ app.use(async ctx => {
   }
 
   if (url.endsWith('.png')) {
-    console.log(process.env)
-    console.log('图盘路上', url)
     const p = path.resolve(__dirname, url.slice(1))
-    const file = fs.readFileSync(p, 'utf-8')
+    const file = fs.readFileSync(p)
     ctx.type = 'image/png'
     ctx.body = file
   }
