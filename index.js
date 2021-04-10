@@ -103,6 +103,14 @@ app.use(async ctx => {
     ctx.type = 'image/png'
     ctx.body = file
   }
+
+  if (url.endsWith('favicon.ico')) {
+    console.log('图标')
+    const p = path.resolve(__dirname, 'public', url.slice(1))
+    const file = fs.readFileSync(p)
+    ctx.type = 'image/png'
+    ctx.body = file
+  }
 })
 
 app.listen(3001, () => {
